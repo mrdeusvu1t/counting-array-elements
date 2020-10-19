@@ -12,7 +12,27 @@ namespace CountingArrayElements
         public static int GetFalseValueCount(bool[] arrayToSearch)
         {
             // TODO #7. Analyze the implementation of "GetFalseValueCountRecursive" methods, and implement the method using the "do..while" loop statement.
-            throw new NotImplementedException();
+
+            if (arrayToSearch is null)
+            {
+                throw new ArgumentNullException(nameof(arrayToSearch));
+            }
+
+            int count = 0;
+            int i = 0;
+
+            do
+            {
+                if (arrayToSearch[i] == false)
+                {
+                    count++;
+                }
+
+                i++;
+
+            } while (i < arrayToSearch.Length);
+
+            return count;
         }
 
         /// <summary>
@@ -23,7 +43,27 @@ namespace CountingArrayElements
         public static int GetZeroDecimalCount(decimal[] arrayToSearch)
         {
             // TODO #8. Analyze the implementation of "GetZeroDecimalCountRecursive" methods, and implement the method using the "do..while" loop statement.
-            throw new NotImplementedException();
+
+            if (arrayToSearch is null)
+            {
+                throw new ArgumentNullException(nameof(arrayToSearch));
+            }
+
+            int count = 0;
+            int i = 0;
+
+            do
+            {
+                if (arrayToSearch[i] == 0)
+                {
+                    count++;
+                }
+
+                i++;
+
+            } while (i < arrayToSearch.Length);
+
+            return count;
         }
 
         /// <summary>
@@ -34,7 +74,29 @@ namespace CountingArrayElements
         public static int GetRoundedToEvenCount(double[] arrayToSearch)
         {
             // TODO #9. Analyze the implementation of "GetRoundedToEvenCountRecursive" methods, and implement the method using the "do..while" loop statement.
-            throw new NotImplementedException();
+
+            if (arrayToSearch is null)
+            {
+                throw new ArgumentNullException(nameof(arrayToSearch));
+            }
+
+            int count = 0;
+            int i = 0;
+
+            do
+            {
+                double currentElement = arrayToSearch[i];
+
+                if (Math.Round(currentElement, 0) % 2 == 0)
+                {
+                    count++;
+                }
+
+                i++;
+
+            } while (i < arrayToSearch.Length);
+
+            return count;
         }
 
         /// <summary>

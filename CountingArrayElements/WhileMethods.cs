@@ -12,7 +12,26 @@ namespace CountingArrayElements
         public static int GetEmptyStringCount(string[] arrayToSearch)
         {
             // TODO #4. Analyze the implementation of "GetEmptyStringCountRecursive" method, and implement the method using the "while" loop statement.
-            throw new NotImplementedException();
+
+            if (arrayToSearch is null)
+            {
+                throw new ArgumentNullException(nameof(arrayToSearch));
+            }
+
+            int count = 0;
+            int i = 0;
+
+            while (i < arrayToSearch.Length)
+            {
+                if (string.IsNullOrEmpty(arrayToSearch[i]))
+                {
+                    count++;
+                }
+
+                i++;
+            }
+
+            return count;
         }
 
         /// <summary>
@@ -23,7 +42,26 @@ namespace CountingArrayElements
         public static int GetMinOrMaxLongCount(long[] arrayToSearch)
         {
             // TODO #5. Analyze the implementation of "GetMinOrMaxLongCount" method, and implement the method using the "while" loop statement.
-            throw new NotImplementedException();
+
+            if (arrayToSearch is null)
+            {
+                throw new ArgumentNullException(nameof(arrayToSearch));
+            }
+
+            int count = 0;
+            int i = 0;
+
+            while (i < arrayToSearch.Length)
+            {
+                if (arrayToSearch[i] == long.MinValue || arrayToSearch[i] == long.MaxValue)
+                {
+                    count++;
+                }
+
+                i++;
+            }
+
+            return count;
         }
 
         /// <summary>
@@ -34,7 +72,25 @@ namespace CountingArrayElements
         public static int GetNullObjectCount(object[] arrayToSearch)
         {
             // TODO #6. Analyze the implementation of "GetNullObjectCountRecursive" method, and implement the method using the "while" loop statement.
-            throw new NotImplementedException();
+            if (arrayToSearch is null)
+            {
+                throw new ArgumentNullException(nameof(arrayToSearch));
+            }
+
+            int count = 0;
+            int i = 0;
+
+            while (i < arrayToSearch.Length)
+            {
+                if (arrayToSearch[i] is null)
+                {
+                    count++;
+                }
+
+                i++;
+            }
+
+            return count;
         }
 
         /// <summary>
